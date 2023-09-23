@@ -1,0 +1,31 @@
+/* Main component */
+.orderBy {
+  position: absolute;
+  right: 16px;
+  color: #ffffff;
+  text-align: right;
+}
+
+/* Toggle Button */
+.orderBy .toggleButton {
+  display: inline-block;
+  background-color: #3a3a3a;
+  padding: 16px;
+}
+
+/* Options menu */
+.orderBy .optionsMenu {
+  list-style: none;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 2rem;
+}
+
+.orderBy .optionsMenu li {
+  padding: 12px 16px;
+  background-color: #5a5a5a;
+}
+
+.orderBy .optionsMenu li.selected {
+  background-color: #757575;
+}
