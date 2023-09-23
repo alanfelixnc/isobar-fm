@@ -1,0 +1,41 @@
+/* Main component */
+.bandCard {
+  padding: 16px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+.bandCard:not(:last-child) {
+  border-bottom: solid 1px #d9d9d9;
+}
+
+/* Band image */
+.bandCard img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+
+/* Band info component */
+.bandCard .info {
+  text-transform: uppercase;
+}
+
+/* Band name */
+.bandCard .info h1 {
+  font-size: 1.125rem;
+
+  margin: 0;
+}
+
+/* Band populary */
+.bandCard .info h2 {
+  font-size: 1rem;
+
+  margin: 0;
+  color: #9b9b9b;
+}
