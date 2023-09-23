@@ -1,9 +1,15 @@
 import { axiosApi } from '../config';
 import { Band } from '../types';
 
-async function fetch(): Promise<Array<Band>> {
+async function fetch(search?: string): Promise<Array<Band>> {
   const result = await axiosApi.get('/bands');
-  return result.data;
+  let finalData: Array<Band> = result.data;
+  if (search) {
+    finalData = finalData.filter((band) =>
+      band.name.toLowerCase().includes(search.toLowerCase())
+    );
+  }
+  return finalData;
 }
 
 export default {

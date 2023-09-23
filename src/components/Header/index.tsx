@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { IconButton } from '..';
 import './styles.css';
 import {
@@ -6,16 +7,36 @@ import {
   faSearch,
 } from '@fortawesome/free-solid-svg-icons';
 
-function Header() {
+type HeaderProps = {
+  onSearch: (search?: string) => void;
+};
+
+function Header({ onSearch }: HeaderProps): JSX.Element {
+  const [search, setSearch] = useState<string>('');
+
+  function onClearSearch(): void {
+    setSearch('');
+  }
+
   return (
     <div className="header">
       <IconButton icon={faAngleLeft} />
       <div className="searchBar">
-        <div className="clearButton">
+        <div
+          className="clearButton"
+          style={{
+            visibility: search ? 'visible' : 'hidden',
+          }}
+          onClick={onClearSearch}
+        >
           <IconButton icon={faClose} />
         </div>
-        <input placeholder="Pesquisar pelo nome da banda" />
-        <div className="searchButton">
+        <input
+          placeholder="Pesquisar pelo nome da banda"
+          value={search}
+          onChange={({ target }) => setSearch(target.value)}
+        />
+        <div className="searchButton" onClick={() => onSearch(search)}>
           <IconButton icon={faSearch} />
         </div>
       </div>

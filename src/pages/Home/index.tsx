@@ -10,14 +10,14 @@ function HomePage(): JSX.Element {
     fetchBands();
   }, []);
 
-  async function fetchBands() {
-    const data: Array<Band> = await bandsApi.fetch();
+  async function fetchBands(search?: string): Promise<void> {
+    const data: Array<Band> = await bandsApi.fetch(search);
     setBands(data);
   }
 
   return (
     <>
-      <Header />
+      <Header onSearch={fetchBands} />
       {bands.map(({ id, image, name, numPlays }) => (
         <BandCard
           key={id}
