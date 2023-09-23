@@ -8,7 +8,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 type HeaderProps = {
-  onSearch: (search?: string) => void;
+  onSearch: (search: string) => void;
 };
 
 function Header({ onSearch }: HeaderProps): JSX.Element {

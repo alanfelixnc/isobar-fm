@@ -1,14 +1,19 @@
 import { useEffect, useState } from 'react';
-import { BandCard, Header } from '../../components';
+import { BandCard, Header, ResultSize } from '../../components';
 import { Band } from '../../types';
 import { bandsApi } from '../../api';
 
 function HomePage(): JSX.Element {
   const [bands, setBands] = useState<Array<Band>>([]);
+  const [search, setSearch] = useState<string>('');
 
   useEffect(() => {
     fetchBands();
   }, []);
+
+  useEffect(() => {
+    fetchBands(search);
+  }, [search]);
 
   async function fetchBands(search?: string): Promise<void> {
     const data: Array<Band> = await bandsApi.fetch(search);
@@ -17,7 +22,8 @@ function HomePage(): JSX.Element {
 
   return (
     <>
-      <Header onSearch={fetchBands} />
+      <Header onSearch={setSearch} />
+      {search && <ResultSize size={bands.length} />}
       {bands.map(({ id, image, name, numPlays }) => (
         <BandCard
           key={id}
