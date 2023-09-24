@@ -22,17 +22,16 @@ function Header({ onSearch }: HeaderProps): JSX.Element {
           style={{
             visibility: search ? 'visible' : 'hidden',
           }}
-          onClick={onClearSearch}
         >
-          <IconButton icon={faClose} />
+          <IconButton icon={faClose} onClick={onClearSearch} />
         </div>
         <input
           placeholder="Pesquisar pelo nome da banda"
           value={search}
           onChange={({ target }) => setSearch(target.value)}
         />
-        <div className="searchButton" onClick={() => onSearch(search)}>
-          <IconButton icon={faSearch} />
+        <div className="searchButton">
+          <IconButton icon={faSearch} onClick={() => onSearch(search)} />
         </div>
       </div>
       <Logo />
