@@ -1,16 +1,21 @@
-import { Id, URL } from '../../types';
+import { URL } from '../../types';
 import './styles.css';
 
 type BandCardProps = {
-  id: Id;
+  onClick: () => void;
   name: string;
   image: URL;
   numPlays: number;
 };
 
-function BandCard({ name, image, numPlays }: BandCardProps): JSX.Element {
+function BandCard({
+  name,
+  image,
+  numPlays,
+  onClick,
+}: BandCardProps): JSX.Element {
   return (
-    <div className="bandCard">
+    <div className="bandCard" onClick={onClick}>
       <img src={image} />
       <div className="info">
         <h1>{name}</h1>

@@ -1,5 +1,5 @@
 import { axiosApi } from '../config';
-import { Band } from '../types';
+import { Band, Id } from '../types';
 
 async function fetch(search?: string, orderBy?: string): Promise<Array<Band>> {
   const result = await axiosApi.get('/bands');
@@ -20,6 +20,12 @@ async function fetch(search?: string, orderBy?: string): Promise<Array<Band>> {
   return finalData;
 }
 
+async function getById(id: Id): Promise<Band> {
+  const result = await axiosApi.get(`/bands/${id}`);
+  return result.data;
+}
+
 export default {
   fetch,
+  getById,
 };

@@ -1,5 +1,4 @@
 export type Id = string;
-
 export type URL = string;
 
 export interface Band {
@@ -10,4 +9,10 @@ export interface Band {
   biography: string;
   numPlays: number;
   albums: Array<Id>;
+}
+
+export interface Album {
+  id: Id;
+  name: string;
+  image: URL;
 }
