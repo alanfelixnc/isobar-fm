@@ -5,3 +5,11 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
 }
+
+.header {
+  background-color: #e03e00;
+  opacity: 90%;
+  color: #ffffff;
+  padding: 12px;
+  height: 32px;
+}

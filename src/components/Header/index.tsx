@@ -1,11 +1,7 @@
 import { useState } from 'react';
-import { IconButton } from '..';
+import { IconButton, Logo } from '..';
 import './styles.css';
-import {
-  faAngleLeft,
-  faClose,
-  faSearch,
-} from '@fortawesome/free-solid-svg-icons';
+import { faClose, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 type HeaderProps = {
   onSearch: (search: string) => void;
@@ -20,7 +16,6 @@ function Header({ onSearch }: HeaderProps): JSX.Element {
 
   return (
     <div className="header">
-      <IconButton icon={faAngleLeft} />
       <div className="searchBar">
         <div
           className="clearButton"
@@ -40,10 +35,7 @@ function Header({ onSearch }: HeaderProps): JSX.Element {
           <IconButton icon={faSearch} />
         </div>
       </div>
-      <div className="logo">
-        <span>isobar</span>
-        <small>.fm</small>
-      </div>
+      <Logo />
     </div>
   );
 }

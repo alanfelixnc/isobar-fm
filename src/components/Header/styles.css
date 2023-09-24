@@ -1,15 +1,9 @@
 /* Main component */
 .header {
-  background-color: #e03e00;
-  opacity: 90%;
-  color: #ffffff;
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
-  padding: 12px;
 }
 
 /* Searchbar  */
@@ -45,19 +39,4 @@
 /* Search button */
 .header .searchBar .searchButton {
   color: #000000;
-}
-
-/* Logo */
-.header .logo {
-  font-family: 'Montserrat', sans-serif;
-}
-
-.header .logo > span {
-  font-size: 1.25rem;
-  font-weight: 400;
-}
-
-.header .logo > small {
-  font-size: 0.625rem;
-  font-weight: 200;
 }

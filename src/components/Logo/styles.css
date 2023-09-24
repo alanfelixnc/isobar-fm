@@ -1,0 +1,14 @@
+/* Logo */
+.logo {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.logo > span {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.logo > small {
+  font-size: 0.625rem;
+  font-weight: 200;
+}
