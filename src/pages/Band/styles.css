@@ -71,6 +71,10 @@
   border-bottom: solid 1px #d9d9d9;
 }
 
+.bandDetails .middleSection .biography.expanded {
+  height: max-content;
+}
+
 .bandDetails .middleSection .biography p {
   text-align: justify;
   word-wrap: break-word;

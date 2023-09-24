@@ -4,16 +4,25 @@ import { Album, Band, Id } from '../../types';
 import { albumsApi, bandsApi } from '../../api';
 import './styles.css';
 import { AlbumGallery, IconButton, Logo } from '../../components';
-import { faAngleLeft, faPlus } from '@fortawesome/free-solid-svg-icons';
+import {
+  faAngleLeft,
+  faMinus,
+  faPlus,
+} from '@fortawesome/free-solid-svg-icons';
 
 function BandPage() {
   const { id } = useParams();
   const [band, setBand] = useState<Band>();
   const [albums, setAlbums] = useState<Array<Album>>([]);
+  const [expandBiography, setExpandBiography] = useState<boolean>(false);
   const navigate = useNavigate();
 
   function onGoBack() {
     navigate(-1);
+  }
+
+  function onExpandBiography() {
+    setExpandBiography(!expandBiography);
   }
 
   async function getBandById(id: Id): Promise<void> {
@@ -52,12 +61,15 @@ function BandPage() {
             <p>{band?.genre}</p>
             <p>{band?.numPlays.toLocaleString()} plays</p>
           </div>
-          <div className="biography">
+          <div className={`biography ${expandBiography ? 'expanded' : ''}`}>
             <p>{band?.biography}</p>
-            <div className="overlay" />
+            {!expandBiography && <div className="overlay" />}
           </div>
           <div className="buttonExpandBiography">
-            <IconButton icon={faPlus} />
+            <IconButton
+              icon={expandBiography ? faMinus : faPlus}
+              onClick={onExpandBiography}
+            />
           </div>
         </div>
         <div className="bottomSection">
