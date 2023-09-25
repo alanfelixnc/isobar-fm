@@ -42,8 +42,7 @@
 }
 
 /* Tablet responsivity */
-
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 481px) {
   .header .searchBar {
     margin: 0 auto;
     width: 50%;

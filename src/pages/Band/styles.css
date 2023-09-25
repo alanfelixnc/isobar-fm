@@ -109,8 +109,7 @@
 }
 
 /* Tablet responsivity */
-
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 481px) {
   .bandDetails .middleSection .biography {
     height: fit-content;
     padding-bottom: 12px;
