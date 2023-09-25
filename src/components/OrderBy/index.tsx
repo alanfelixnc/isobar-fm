@@ -25,7 +25,10 @@ function OrderBy({ onChange }: OrderByProps): JSX.Element {
 
   return (
     <div className="orderBy">
-      <div className="toggleButton" onClick={() => setShowMenu(!showMenu)}>
+      <div
+        className={`toggleButton ${showMenu ? 'active' : ''}`}
+        onClick={() => setShowMenu(!showMenu)}
+      >
         <FontAwesomeIcon icon={faSort} width={16} height={16} />
       </div>
       {showMenu && (

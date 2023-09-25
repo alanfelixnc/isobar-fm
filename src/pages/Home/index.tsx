@@ -3,6 +3,7 @@ import { BandCard, Header, OrderBy, ResultSize } from '../../components';
 import { Band } from '../../types';
 import { bandsApi } from '../../api';
 import { useNavigate } from 'react-router-dom';
+import './styles.css';
 
 function HomePage(): JSX.Element {
   const [bands, setBands] = useState<Array<Band>>([]);
@@ -32,15 +33,17 @@ function HomePage(): JSX.Element {
       <Header onSearch={setSearch} />
       <OrderBy onChange={setOrderBy} />
       {search && <ResultSize size={bands.length} />}
-      {bands.map(({ id, image, name, numPlays }) => (
-        <BandCard
-          key={id}
-          onClick={() => onClickBand(id)}
-          image={image}
-          name={name}
-          numPlays={numPlays}
-        />
-      ))}
+      <div className="bandsGrid">
+        {bands.map(({ id, image, name, numPlays }) => (
+          <BandCard
+            key={id}
+            onClick={() => onClickBand(id)}
+            image={image}
+            name={name}
+            numPlays={numPlays}
+          />
+        ))}
+      </div>
     </>
   );
 }

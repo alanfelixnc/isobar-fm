@@ -14,6 +14,10 @@ function Header({ onSearch }: HeaderProps): JSX.Element {
     setSearch('');
   }
 
+  function onPressEnter(key: string) {
+    if (key === 'Enter') onSearch(search);
+  }
+
   return (
     <div className="header">
       <div className="searchBar">
@@ -29,6 +33,7 @@ function Header({ onSearch }: HeaderProps): JSX.Element {
           placeholder="Pesquisar pelo nome da banda"
           value={search}
           onChange={({ target }) => setSearch(target.value)}
+          onKeyDown={({ key }) => onPressEnter(key)}
         />
         <div className="searchButton">
           <IconButton icon={faSearch} onClick={() => onSearch(search)} />

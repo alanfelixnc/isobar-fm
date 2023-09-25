@@ -1,0 +1,13 @@
+/* Desktop responsivity */
+@media screen and (min-width: 769px) {
+  .bandsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .bandsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

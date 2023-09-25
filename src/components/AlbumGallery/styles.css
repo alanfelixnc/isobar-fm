@@ -41,3 +41,21 @@
     grid-template-columns: repeat(6, 1fr);
   }
 }
+
+/* Desktop responsivity */
+@media screen and (min-width: 769px) {
+  .albumGallery {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 8px;
+  }
+
+  .albumGallery .item {
+    cursor: pointer;
+    transition: all 0.1s;
+  }
+
+  .albumGallery .item:hover {
+    transform: scale(110%, 110%);
+    z-index: 9;
+  }
+}

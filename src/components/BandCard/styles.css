@@ -39,3 +39,19 @@
   margin: 0;
   color: #9b9b9b;
 }
+
+/* Desktop responsivity */
+@media screen and (min-width: 769px) {
+  .bandCard {
+    cursor: pointer;
+    border-bottom: solid 1px #d9d9d9;
+  }
+
+  .bandCard img {
+    transition: all 0.1s;
+  }
+
+  .bandCard:hover img {
+    transform: scale(120%, 120%);
+  }
+}

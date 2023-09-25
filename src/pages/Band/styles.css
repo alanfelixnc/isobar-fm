@@ -6,6 +6,10 @@
 }
 
 /* Top section */
+.bandDetails .topSection {
+  position: relative;
+}
+
 .bandDetails .topSection .backgroundImage {
   width: 100vw;
   height: 300px;
@@ -121,5 +125,35 @@
 
   .bandDetails .middleSection .buttonExpandBiography {
     display: none;
+  }
+}
+
+/* Desktop responsivity */
+@media screen and (min-width: 769px) {
+  .bandDetails .topSection .image {
+    left: 24px;
+    width: 160px;
+    height: 160px;
+    top: 220px;
+  }
+
+  .bandDetails .topSection .name {
+    width: auto;
+    text-align: left;
+    padding-left: 208px;
+    bottom: 24px;
+    top: unset;
+  }
+
+  .bandDetails .middleSection .info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .bandDetails .middleSection .info p {
+    text-align: left;
+    width: auto;
+    padding-left: 208px;
   }
 }
