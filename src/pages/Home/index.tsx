@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BandCard, Header, OrderBy, ResultSize } from '../../components';
+import { BandCard, Empty, Header, OrderBy, ResultSize } from '../../components';
 import { Band } from '../../types';
 import { bandsApi } from '../../api';
 import { useNavigate } from 'react-router-dom';
@@ -33,6 +33,7 @@ function HomePage(): JSX.Element {
       <Header onSearch={setSearch} />
       <OrderBy onChange={setOrderBy} />
       {search && <ResultSize size={bands.length} />}
+      {search && bands.length < 1 && <Empty />}
       <div className="bandsGrid">
         {bands.map(({ id, image, name, numPlays }) => (
           <BandCard

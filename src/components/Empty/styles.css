@@ -1,0 +1,12 @@
+/* Main component */
+.empty {
+  text-align: center;
+  color: #9b9b9b;
+  margin: 64px 0;
+}
+
+/* Image */
+.empty img {
+  width: 50%;
+  max-width: 300px;
+}
