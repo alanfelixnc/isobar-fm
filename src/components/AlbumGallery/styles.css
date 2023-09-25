@@ -3,7 +3,7 @@
   margin: 0;
   width: 100vw;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 /* Album item */
@@ -33,4 +33,11 @@
   position: absolute;
   bottom: 0;
   margin: 8px;
+}
+
+/* Tablet responsivity */
+@media screen and (min-width: 768px) {
+  .albumGallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }

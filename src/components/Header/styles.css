@@ -40,3 +40,16 @@
 .header .searchBar .searchButton {
   color: #000000;
 }
+
+/* Tablet responsivity */
+
+@media screen and (min-width: 768px) {
+  .header .searchBar {
+    margin: 0 auto;
+    width: 50%;
+  }
+
+  .header .searchBar input {
+    width: 100%;
+  }
+}

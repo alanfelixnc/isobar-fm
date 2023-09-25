@@ -107,3 +107,20 @@
   text-align: center;
   text-transform: uppercase;
 }
+
+/* Tablet responsivity */
+
+@media screen and (min-width: 768px) {
+  .bandDetails .middleSection .biography {
+    height: fit-content;
+    padding-bottom: 12px;
+  }
+
+  .bandDetails .middleSection .biography .overlay {
+    display: none;
+  }
+
+  .bandDetails .middleSection .buttonExpandBiography {
+    display: none;
+  }
+}
